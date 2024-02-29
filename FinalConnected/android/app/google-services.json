@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "460821369259",
+    "project_id": "wireless-41c37",
+    "storage_bucket": "wireless-41c37.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460821369259:android:f111a7169260fa1d27c2ee",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQhTN-rUmX33Z9c6AAEwUXGgEZFiffKk0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
