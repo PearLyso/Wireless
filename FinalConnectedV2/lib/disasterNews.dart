@@ -52,7 +52,7 @@ class DisasterNewsPage extends StatefulWidget {
 }
 
 class _DisasterNewsPageState extends State<DisasterNewsPage> {
-  final Color _primaryColor = Colors.green;
+  final Color _primaryColor = Color.fromARGB(255, 9, 109, 6);
   List<Category> _categories = [];
   int? _selectedCategoryId;
   bool _isLoading = true;
@@ -294,56 +294,62 @@ class _DisasterNewsPageState extends State<DisasterNewsPage> {
             ),
       bottomNavigationBar: BottomAppBar(
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            // Home Button with Text
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MyHomePage()));
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
+          children: <Widget>[
+            Expanded(
+              // Home Button
+              child: TextButton(
+                onPressed: () {
+                  print("Home");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyHomePage()),
+                  );
+                },
                 child: Row(
-                  mainAxisSize:
-                      MainAxisSize.min, // Use min to keep the Row tight
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.network(
                       'https://cdn-icons-png.flaticon.com/128/619/619153.png',
-                      width: 30,
-                      height: 30,
+                      width: 40,
+                      height: 40,
                     ),
-                    SizedBox(
-                        width:
-                            5), // Provide some spacing between the icon and text
-                    Text('Home', style: TextStyle(color: _primaryColor)),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(10, 30.0, 0, 30.0),
+                    ),
+                    Text(
+                      "Home",
+                      style: TextStyle(color: Colors.black, fontSize: 20),
+                    ),
                   ],
                 ),
               ),
             ),
-            // Emergency Call Button with Text
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
+            Expanded(
+              // Emergency Call Button
+              child: TextButton(
+                onPressed: () {
+                  print("Emergency Call");
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => EmergencyCallPage()));
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                        builder: (context) => EmergencyCallPage()),
+                  );
+                },
                 child: Row(
-                  mainAxisSize:
-                      MainAxisSize.min, // Use min to keep the Row tight
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.network(
                       'https://cdn-icons-png.flaticon.com/512/2991/2991174.png',
-                      width: 30,
-                      height: 30,
+                      width: 24,
+                      height: 24,
                     ),
-                    SizedBox(
-                        width:
-                            5), // Provide some spacing between the icon and text
-                    Text('Emergency', style: TextStyle(color: _primaryColor)),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(10, 30.0, 0, 30.0),
+                    ),
+                    Text(
+                      "Emergency Call",
+                      style: TextStyle(color: Colors.black, fontSize: 15),
+                    ),
                   ],
                 ),
               ),
