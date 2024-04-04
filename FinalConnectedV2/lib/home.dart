@@ -59,7 +59,7 @@ class MyHomePage extends StatelessWidget {
               },
               style: TextButton.styleFrom(
                 padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-                backgroundColor: Colors.red[900],
+                backgroundColor: Color.fromARGB(255, 9, 109, 6),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
@@ -103,7 +103,7 @@ class MyHomePage extends StatelessWidget {
               },
               style: TextButton.styleFrom(
                 padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-                backgroundColor: Color.fromARGB(255, 238, 67, 15),
+                backgroundColor: Color.fromARGB(255, 9, 109, 6),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
