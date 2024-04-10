@@ -32,13 +32,9 @@ class _MapsPageState extends State<MapsPage> {
   }
 
   Future<void> _getDisasterLocation() async {
-    // Check if it's the fake news event
     if (widget.eventId == 'FAKE_NEWS_001') {
-      // Manually set the location for the fake news event
-      double latitude =
-          13.721206196538787; // Example latitude for Bangwa, Thailand
-      double longitude =
-          100.45768665200146; // Example longitude for Bangwa, Thailand
+      double latitude = 13.721206196538787;
+      double longitude = 100.45768665200146;
 
       setState(() {
         disasterLocation = LatLng(latitude, longitude);
@@ -51,7 +47,6 @@ class _MapsPageState extends State<MapsPage> {
                 BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
           ),
         );
-        // Optionally, you might want to call _setMapFitToTour here if you're sure userLocation is already set
       });
     } else {
       final url =
@@ -61,16 +56,13 @@ class _MapsPageState extends State<MapsPage> {
         if (response.statusCode == 200) {
           final jsonResponse = json.decode(response.body);
 
-          // Assuming the coordinates are in the first geometry object
           final coordinates = jsonResponse['geometries'][0]['coordinates'];
           double latitude = coordinates[1];
           double longitude = coordinates[0];
 
-          // Log the latitude and longitude
           print(
               'Disaster Location -> Latitude: $latitude, Longitude: $longitude');
 
-          // Set the disasterLocation variable
           setState(() {
             disasterLocation = LatLng(latitude, longitude);
             _markers.add(
@@ -82,7 +74,7 @@ class _MapsPageState extends State<MapsPage> {
                     BitmapDescriptor.hueRed),
               ),
             );
-            // If you have user location already, fit the map to show both pins
+            // Fit the map to show both pins
             if (userLocation != null) {
               _setMapFitToTour(_markers);
             }
@@ -167,15 +159,22 @@ class _MapsPageState extends State<MapsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Map Location'),
+        title: Text(
+          'Map Location',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         backgroundColor: Colors.green[900],
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
       ),
       body: Stack(
         children: [
           GoogleMap(
             onMapCreated: _onMapCreated,
             initialCameraPosition: CameraPosition(
-              // Ensure initial position is set to a default value
               target: disasterLocation ?? LatLng(0.0, 0.0),
               zoom: 6.0,
             ),
@@ -205,7 +204,6 @@ class _MapsPageState extends State<MapsPage> {
         child: Row(
           children: <Widget>[
             Expanded(
-              // Home Button
               child: TextButton(
                 onPressed: () {
                   print("Home");
@@ -234,7 +232,6 @@ class _MapsPageState extends State<MapsPage> {
               ),
             ),
             Expanded(
-              // Emergency Call Button
               child: TextButton(
                 onPressed: () {
                   print("Emergency Call");

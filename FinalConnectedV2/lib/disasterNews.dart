@@ -102,15 +102,14 @@ class _DisasterNewsPageState extends State<DisasterNewsPage> {
             .map((eventJson) => EonetEvent.fromJson(eventJson))
             .toList();
 
-        // Add fake news event
         loadedEvents.add(EonetEvent(
-          id: 'FAKE_NEWS_001', // Provide a fake ID
+          id: 'FAKE_NEWS_001',
           title: 'Floods in Bangwa, Thailand',
           description: 'Severe floods reported in Bangwa region, Thailand.',
           link:
-              'https://example.com/floods-in-bangwa', // Provide a link to the fake news details if needed
+              'https://example.com/floods-in-bangwa', 
           category: 'Floods',
-          date: '2024-03-31T00:00:00Z', // Provide a fake date
+          date: '2024-03-31T00:00:00Z', 
         ));
 
         if (categoryId != null && categoryId != 0) {
@@ -185,16 +184,16 @@ class _DisasterNewsPageState extends State<DisasterNewsPage> {
     return Container(
       padding: EdgeInsets.symmetric(
           vertical: 5.0,
-          horizontal: 8.0), // Add some padding around the container
+          horizontal: 8.0), 
       decoration: BoxDecoration(
         border: Border.all(
-            color: _primaryColor), // Green border around the container
+            color: _primaryColor), 
         borderRadius:
-            BorderRadius.circular(5.0), // Optional: if you want rounded corners
+            BorderRadius.circular(5.0), 
       ),
       child: Row(
         mainAxisSize: MainAxisSize
-            .min, // Use min to keep the Row tight around the children
+            .min, 
         children: [
           IconButton(
             icon: Icon(_isSortAsc ? Icons.arrow_upward : Icons.arrow_downward),
@@ -209,7 +208,7 @@ class _DisasterNewsPageState extends State<DisasterNewsPage> {
           Text(
             _isSortAsc ? 'Ascending' : 'Descending',
             style: TextStyle(
-              color: _primaryColor, // Text color
+              color: _primaryColor,
             ),
           ),
         ],

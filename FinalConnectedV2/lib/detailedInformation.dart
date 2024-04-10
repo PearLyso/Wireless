@@ -171,8 +171,16 @@ class _DetailedInformationPageState extends State<DetailedInformationPage> {
             ),
           );
         },
-        label: Text('Map'),
-        icon: Icon(Icons.map),
+        label: Text(
+          'Map',
+          style: TextStyle(
+            color: Colors.white, // Set text color to white
+          ),
+        ),
+        icon: Icon(
+          Icons.map,
+          color: Colors.white, // Set icon color to white
+        ),
         backgroundColor: Colors.green[900],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
